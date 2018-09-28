@@ -27,6 +27,20 @@ for (int x = 0; x < ary.length; x++) {
 }
     System.out.println(" ]");
   }
+  public class CountZeros {
+
+  	public static int countZeros2D (int[][] nums) {
+  		int i;
+  		int j;
+  		int count = 0;
+  		for(i= 0; i<nums.length; i++)
+  			for(j=0; j<nums[i].length; j++) {
+  				if (nums[i][j] == 0) {
+  					count ++;
+  				}
+  			}
+  		return count;
+   	}
 
 public static void main(String[]args) {
   int[] Array1 = {1, 2, 4, 5, 7, 8};
@@ -38,7 +52,7 @@ public static void main(String[]args) {
                     {5, 6, 7},
                     {1, 8, 9}};
   printArray2(Array3);
+  System.out.println(countZeros2D(Array2));
 }
 
 }
-
