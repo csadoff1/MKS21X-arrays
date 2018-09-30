@@ -27,9 +27,8 @@ for (int x = 0; x < ary.length; x++) {
 }
     System.out.println(" ]");
   }
-  public class CountZeros {
 
-  	public static int countZeros2D (int[][] nums) {
+  public static int countZeros2D (int[][] nums) {
   		int i;
   		int j;
   		int count = 0;
@@ -42,6 +41,36 @@ for (int x = 0; x < ary.length; x++) {
   		return count;
    	}
 
+    public static void fill2D(int[][]vals) {
+		int i;
+		int j;
+		for(i=0; i<vals.length; i++) {
+			for(j=0; j<vals[i].length; i++) {
+				if(j==i) {
+					vals[i][j] = 3;
+				}
+				else {
+					vals[i][j] = 1;
+ 				}
+			}
+		}
+  }
+
+  public static void fill2DCopy(int[][]vals) {
+  int i;
+  int j;
+  for(i=0; i<vals.length; i++) {
+    for(j=0; j<vals[i].length; i++) {
+      if(vals[i][j]<0) {
+        vals[i][j] = 3;
+      }
+      else {
+        vals[i][j] = 1;
+      }
+    }
+  }
+}
+
 public static void main(String[]args) {
   int[] Array1 = {1, 2, 4, 5, 7, 8};
   printArray(Array1);
@@ -50,9 +79,9 @@ public static void main(String[]args) {
   printArray2(Array2);
   int[][] Array3 = {{4, 3, 2},
                     {5, 6, 7},
-                    {1, 8, 9}};
+                    {0, 1, 9}};
   printArray2(Array3);
-  System.out.println(countZeros2D(Array2));
+  System.out.println(countZeros2D(Array3));
 }
 
 }
